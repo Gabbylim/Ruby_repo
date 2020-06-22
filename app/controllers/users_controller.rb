@@ -11,10 +11,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
      #handle a sucess save
-     flash[:succes] = "Congrats you succesfully created a ChattboxKE account"
+     flash.now[:succes] = "Congrats you succesfully created a ChattboxKE account"
+     log_in @user
+     flash.now[:info] = "you are loggged in"
      redirect_to @user
+      
     else
-    flash[:warning] = "Your signup failed,try again"
+    flash.now[:warning] = "Your signup failed,try again"
     render 'new'
     end
 end

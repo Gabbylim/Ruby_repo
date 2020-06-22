@@ -4,15 +4,16 @@
 /* universal */
 
 body {
- padding-top: 60px;
- background-image : url('celebrate-carnival-background.jpg');
- background-size: cover;
- background-repeat: no-repeat;
- background-attachment: fixed;
- height: 100%;
- }
+ padding-top: 0px;
  
 
+#sess {
+  background-image: url('chaty.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%
+}
+}
 
 section {
   overflow: auto;
@@ -148,6 +149,10 @@ input,textarea,select, .uneditable-input {
    color: $state-danger-text
   }
 }
+
+
+
+
 
 
 
