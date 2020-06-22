@@ -3,7 +3,7 @@
   <%= link_to "ChattboxKE", root_path, id: "logo" %>
 <nav>
 <ul class="nav navbar-nav navbar-right">
-
+<li><%= link_to "Create A Chat Account",signup_path,class: "btn btn-lg btn-primary" %></li>
 <% if logged_in? %>
   <li><%= link_to "Users",'#' %></li>
     <li class="dropdown">

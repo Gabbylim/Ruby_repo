@@ -6,10 +6,11 @@
     <%= render 'layouts/shim' %>
   </head>
 
-  <body>
+  <body class= "<%= controller_name %> <%= action_name %>">
     <%= render 'layouts/header' %>
     <div class="container">
     <%= render 'layouts/flash' %>
+    	
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
