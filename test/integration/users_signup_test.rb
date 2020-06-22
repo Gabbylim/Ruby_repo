@@ -21,7 +21,11 @@ assert_template 'shared/_error_messages'
      post users_path, params: { user: { name: "Example",email: "example@gmail.com",password: "password",password_confirmation: "password" } }
   end
   follow_redirect!
+  
   assert_template 'users/show'
-  assert_not flash.empty?
+  assert is_logged_in?
+  
+  
+ 
   end
 end
