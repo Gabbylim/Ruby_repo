@@ -9,6 +9,10 @@ module SessionsHelper
    cookies[:remember_token] ={value: user.remember_token, expires: 2.days.from_now.utc }
    end
 
+ def current_user?(user)
+  user == current_user
+  end
+
   def forget(user)
     user.forget
     cookies.delete(:user_id)
@@ -37,4 +41,14 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
-end
+
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+   session[:forwarding_url] = request.original_url if request.get?
+  end
+ end
+
