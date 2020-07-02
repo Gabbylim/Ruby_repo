@@ -26,7 +26,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -66,9 +66,9 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
    config.action_mailer.raise_delivery_errors = true
    config.action_mailer.delivery_method = :smtp
-   host = 'pacific-temple-01285.herokuapp.com'
+   host = 'quiet-dawn-84995.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
-   ActionMailer::Base.smtp.settings = {
+   ActionMailer::Base.smtp_settings = {
      :address => 'smtp.sendgrid.net',
      :port => '587',
      :authentication => :plain,
