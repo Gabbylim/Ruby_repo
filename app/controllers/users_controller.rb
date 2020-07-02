@@ -8,24 +8,22 @@ before_action :admin_user,only: :destroy
   end
   
   def index
-  @users = User.paginate(page: params[:page])
+  @users = User.where(activated: true).paginate(page: params[:page])
   end
 
   def show
    @user = User.find(params[:id])
+   redirect_to root_url and return unless @user.activated?
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-     #handle a sucess save
-     flash.now[:succes] = "Congrats you succesfully created a ChattboxKE account"
-     log_in @user
-     flash.now[:info] = "you are loggged in"
-     redirect_to @user
-      
+      @user.send_activation_email
+    flash[:info] = "Please check your email to activate your chattboxKE account."
+    redirect_to root_url
+    
     else
-    flash.now[:warning] = "Your signup failed,try again"
     render 'new'
     end
 end
