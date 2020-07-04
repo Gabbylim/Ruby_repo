@@ -71,12 +71,22 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: host }
    ActionMailer::Base.smtp_settings = {
+<<<<<<< HEAD
      :address => 'smtp.sendgrid.net',
      :port => '587',
+||||||| merged common ancestors
+     :address => 'smtp.sendgrid.net',
+     :api_key  => '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',
+     :port => '587',
+=======
+     :address =>  ENV['MAILGUN_SMTP_SERVER'],
+  
+     :port => ENV['MAILGUN_SMTP_PORT'],
+>>>>>>> account-activation
      :authentication => :plain,
-     :user_name => ENV['SENDGRID_USERNAME'],
-     :password => ENV['SENDGRID_PASSWORD'],
-     :domain => 'heroku.com',
+     :user_name => ENV['MAILGUN_SMTP_LOGIN'],
+     :password => ENV['MAILGUN_SMTP_PASSWORD'],
+     :domain => 'pacific-temple-01285.heroku.com',
      :enable_starttls_auto => true
   }
   
