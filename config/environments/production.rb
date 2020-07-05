@@ -67,14 +67,21 @@ Rails.application.configure do
    config.action_mailer.raise_delivery_errors = true
 
     config.action_mailer.delivery_method = :smtp
+
    host = 'tranquil-congaree-11259.herokuapp.com'
 
+   host = 'tranquil-congaree-11259.herokuapp.com'
+>>>>>>> account-activation
   config.action_mailer.default_url_options = { host: host }
    ActionMailer::Base.smtp_settings = {
-     :address =>  'smtp.sendgrid.net',
+   
+     :address => 'smtp.sendgrid.net',
+  
      :port => '587',
+
      :authentication => :plain,
-     :user_name => ENV['SENDGRID_USERNAME']  ,
+ 
+     :user_name => ENV['SENDGRID_USERNAME'],
      :password => ENV['SENDGRID_PASSWORD'],
      :domain => 'heroku.com',
      :enable_starttls_auto => true
