@@ -74,11 +74,29 @@ Rails.application.configure do
 >>>>>>> account-activation
   config.action_mailer.default_url_options = { host: host }
    ActionMailer::Base.smtp_settings = {
+<<<<<<< HEAD
    
      :address => 'smtp.sendgrid.net',
   
      :port => '587',
 
+||||||| merged common ancestors
+<<<<<<< HEAD
+     :address => 'smtp.sendgrid.net',
+     :port => '587',
+||||||| merged common ancestors
+     :address => 'smtp.sendgrid.net',
+     :api_key  => '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',
+     :port => '587',
+=======
+     :address =>  ENV['MAILGUN_SMTP_SERVER'],
+  
+     :port => ENV['MAILGUN_SMTP_PORT'],
+>>>>>>> account-activation
+=======
+     :address =>  ENV['MAILGUN_SMTP_SERVER'],
+     :port => ENV['MAILGUN_SMTP_PORT'],
+>>>>>>> bced3d0b93a12c6c5a0a1182424d1e220fa0404b
      :authentication => :plain,
  
      :user_name => ENV['SENDGRID_USERNAME'],
