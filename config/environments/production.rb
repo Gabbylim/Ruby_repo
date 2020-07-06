@@ -69,12 +69,12 @@ Rails.application.configure do
    host = 'tranquil-congaree-11259.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
    ActionMailer::Base.smtp_settings = {
-     :address => 'smtp.sendgrid.net',
+     :address => 'smtp.gmail.net',
   
      :port => '587',
      :authentication => :plain,
-     :user_name => ENV['SENDGRID_USERNAME'],
-     :password => ENV['SENDGRID_PASSWORD'],
+     :user_name => ENV['gmail_username'],
+     :password => ENV['gmail_password'],
      :domain => 'traquil-congaree-11259.heroku.com',
      :enable_starttls_auto => true
   }
