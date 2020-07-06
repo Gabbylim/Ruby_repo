@@ -72,30 +72,12 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: host }
    ActionMailer::Base.smtp_settings = {
-<<<<<<< HEAD
-     :address => 'smtp.sendgrid.net',
-||||||| merged common ancestors
-     :address => 'smtp.sendgrid.net',
-  
-=======
      :address => 'smtp.gmail.net',
-  
->>>>>>> account-activation
-     :port => '587',
+       :port => '587',
      :authentication => :plain,
-<<<<<<< HEAD
-     :user_name => ENV['SENDGRID_USERNAME'],
-     :password => ENV['SENDGRID_PASSWORD'],
-     :domain => 'heroku.com',
-||||||| merged common ancestors
-     :user_name => ENV['SENDGRID_USERNAME'],
-     :password => ENV['SENDGRID_PASSWORD'],
-     :domain => 'traquil-congaree-11259.heroku.com',
-=======
      :user_name => ENV['gmail_username'],
      :password => ENV['gmail_password'],
      :domain => 'traquil-congaree-11259.heroku.com',
->>>>>>> account-activation
      :enable_starttls_auto => true
   }
   
